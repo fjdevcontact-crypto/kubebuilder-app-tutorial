@@ -1,0 +1,56 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: simpleapps.apps.tutorial.kubebuilder.io
+spec:
+  group: apps.tutorial.kubebuilder.io
+  names:
+    kind: SimpleApp
+    listKind: SimpleAppList
+    plural: simpleapps
+    singular: simpleapp
+    shortNames: [sapp]
+  scope: Namespaced
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      subresources:
+        status: {}
+      additionalPrinterColumns:
+        - name: Replicas
+          type: integer
+          jsonPath: .spec.replicas
+        - name: Ready
+          type: integer
+          jsonPath: .status.readyReplicas
+        - name: Phase
+          type: string
+          jsonPath: .status.phase
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            apiVersion: {type: string}
+            kind: {type: string}
+            metadata: {type: object}
+            spec:
+              type: object
+              required: [replicas, image]
+              properties:
+                replicas:
+                  type: integer
+                  format: int32
+                  minimum: 0
+                image:
+                  type: string
+                message:
+                  type: string
+            status:
+              type: object
+              properties:
+                readyReplicas:
+                  type: integer
+                  format: int32
+                phase:
+                  type: string
