@@ -2,6 +2,7 @@ apiVersion: apps.tutorial.kubebuilder.io/v1
 kind: SimpleApp
 metadata:
   name: demo
+  namespace: default
 spec:
   replicas: 6
   image: nginx:1.27
