@@ -3,6 +3,6 @@ kind: SimpleApp
 metadata:
   name: demo
 spec:
-  replicas: 2
+  replicas: 6
   image: nginx:1.27
   message: hola
