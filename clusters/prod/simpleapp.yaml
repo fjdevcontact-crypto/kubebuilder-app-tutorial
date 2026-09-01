@@ -1,0 +1,13 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: simpleapp-prod
+  namespace: flux-system
+spec:
+  intervals: 1m
+  path: ./apps/simpleapp/overlays/prod
+  prune: true
+
+  sourceRef:
+    kind: GitRepository
+    name: flux-system

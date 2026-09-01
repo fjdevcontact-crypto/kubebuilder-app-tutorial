@@ -3,5 +3,5 @@ kind: SimpleApp
 metadata:
   name: demo
 spec:
-  replicas: 1
+  replicas: 3
   message: hola desde prod
