@@ -4,7 +4,7 @@ metadata:
   name: simpleapp-prod
   namespace: flux-system
 spec:
-  intervals: 1m
+  interval: 1m
   path: ./apps/simpleapp/overlays/prod
   prune: true
 
