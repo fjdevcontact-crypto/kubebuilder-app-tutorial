@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  path: ./apps/simpleapp/overlays/no-existe
+  path: ./apps/simpleapp/overlays/dev
   prune: true
 
   sourceRef:
