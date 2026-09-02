@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - simpleapp.yaml
   - service.yaml
+  - ingress.yaml
